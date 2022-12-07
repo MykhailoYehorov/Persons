@@ -1,34 +1,21 @@
+import java.util.Scanner;
 public class Demo {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
         Person p1 = new Person();
-        p1.getBirthYear(1990);
-        p1.getFirstName("Michael");
-        p1.getLastName("Pupkin");
-        System.out.println(p1);
+        p1.input();
+        p1.output();
+        p1.changeName("Vasja", "Hooligan");
+        p1.output();
+        p1.changeName("Nadja", null);
+        p1.output();
+        p1.changeName(null, "Nosko");
+        p1.output();
+        System.out.println(p1.getAge());
 
-        Person p2 = new Person();
-        p2.getBirthYear(1982);
-        p2.getFirstName("Vasja");
-        p2.getLastName("Masutkin");
-        System.out.println(p2);
 
-        Person p3 = new Person();
-        p3.getBirthYear(1995);
-        p3.getFirstName("Andrij");
-        p3.getLastName("Karpenko");
-        System.out.println(p3);
-
-        Person p4 = new Person();
-        p4.getBirthYear(2002);
-        p4.getFirstName("Maksym");
-        p4.getLastName("Antonov");
-        System.out.println(p4);
-
-        Person p5 = new Person();
-        p5.getBirthYear(1985);
-        p5.getFirstName("Mykolaj");
-        p5.getLastName("Dunajev");
-        System.out.println(p5);
     }
 }

@@ -1,11 +1,13 @@
-public class Person{
-//class
-private String firstName;
-private String lastName;
-private int birthYear;
+import java.util.Scanner;
+
+public class Person {
+    //class
+    private String firstName;
+    private String lastName;
+    private int birthYear;
 
 
-//constructor
+    //constructor
     public Person() {
     }
 
@@ -13,7 +15,8 @@ private int birthYear;
         this.firstName = firstName;
         this.lastName = lastName;
     }
-//getters
+
+    //getters
     public String getFirstName(String michael) {
         return firstName;
     }
@@ -39,6 +42,44 @@ private int birthYear;
         this.birthYear = birthYear;
     }
 
+
+    public int getAge() {
+        return 2022 - this.birthYear;
+    }
+
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write your First name\n");
+        this.firstName = sc.nextLine();
+
+        System.out.println("Write your Last name\n");
+        this.lastName = sc.nextLine();
+
+        System.out.println("Write your Birth year\n");
+        this.birthYear = sc.nextInt();
+
+
+    }
+
+    public void output() {
+        System.out.println("Person info: \nFirstName: " + firstName + "\n" + "Lastname: " + lastName + "\n" + "Birth Age: "
+                + birthYear + "\n" + "Age: " + getAge());
+    }
+
+    public void changeName(String firstName, String lastName){
+        if (firstName == null)
+            this.lastName = lastName;
+        else if (lastName == null)
+            this.firstName = firstName;
+        else {
+            this.firstName = firstName;
+            this.lastName= lastName;
+        }
+
+
+
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -46,5 +87,7 @@ private int birthYear;
                 ", lastName='" + lastName + '\'' +
                 ", birthYear=" + birthYear +
                 '}';
+
+
     }
 }
